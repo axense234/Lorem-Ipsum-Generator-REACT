@@ -1,0 +1,77 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+/* Colors: Royal Blue #234E70, Pale Yellow #FBF8BE */
+
+/* ANIMATIONS */
+@keyframes button_animation {
+  100% {
+    background-color: black;
+    color: #fbf8be;
+  }
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+body {
+  background-color: #234e70;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+#title {
+  margin-bottom: 2rem;
+}
+
+.main-div {
+  display: flex;
+  flex-direction: row;
+}
+
+button {
+  margin-left: 1rem;
+  width: 6rem;
+  background-color: #fbf8be;
+  color: black;
+  font-weight: 800;
+  border-color: #fbf8be;
+  box-shadow: 1px 1px 9px 2px black;
+}
+
+button:hover {
+  animation: button_animation 1s alternate infinite;
+}
+
+input {
+  width: 3rem;
+  padding-left: 0.4rem;
+  background-color: #fbf8be;
+  color: black;
+  border-color: #fbf8be;
+  box-shadow: 1px 1px 9px 2px black;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-weight: 800;
+}
+
+label {
+  margin-right: 0.5rem;
+  font-weight: 800;
+  text-shadow: 1px 1px 9px black;
+}
+
+#paragraph {
+  margin: 1.5rem 1rem 1.5rem 1rem;
+}
+
+@media screen and (max-width: 550px) {
+  #title {
+    font-size: 1.5rem;
+  }
+}
