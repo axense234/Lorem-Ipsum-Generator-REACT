@@ -1,77 +1,70 @@
 * {
   padding: 0;
   margin: 0;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  box-sizing: border-box;
 }
-/* Colors: Royal Blue #234E70, Pale Yellow #FBF8BE */
 
-/* ANIMATIONS */
-@keyframes button_animation {
-  100% {
-    background-color: black;
-    color: #fbf8be;
-  }
+html,
+body {
+  width: 100%;
+  height: 100%;
 }
 
 #root {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 3rem;
+  align-items: flex-start;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
 }
 
-body {
-  background-color: #234e70;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
-}
-
-#title {
-  margin-bottom: 2rem;
-}
-
-.main-div {
+.li-generator-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  border: 3px solid black;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  gap: 2rem;
+  width: 75%;
+  margin: 5rem 0;
 }
 
-button {
+.li-generator-container__form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.li-generator-container__form > input {
   margin-left: 1rem;
-  width: 6rem;
-  background-color: #fbf8be;
-  color: black;
-  font-weight: 800;
-  border-color: #fbf8be;
-  box-shadow: 1px 1px 9px 2px black;
 }
 
-button:hover {
-  animation: button_animation 1s alternate infinite;
+@media all and (max-width: 500px) {
+  .li-generator-container {
+    width: 90%;
+  }
+
+  .li-generator-container__form {
+    gap: 1rem;
+  }
+
+  .li-generator-container__form > button {
+    width: 80%;
+  }
 }
 
-input {
-  width: 3rem;
-  padding-left: 0.4rem;
-  background-color: #fbf8be;
-  color: black;
-  border-color: #fbf8be;
-  box-shadow: 1px 1px 9px 2px black;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-weight: 800;
-}
+@media all and (max-width: 360px) {
+  .li-generator-container__form {
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
 
-label {
-  margin-right: 0.5rem;
-  font-weight: 800;
-  text-shadow: 1px 1px 9px black;
-}
-
-#paragraph {
-  margin: 1.5rem 1rem 1.5rem 1rem;
-}
-
-@media screen and (max-width: 550px) {
-  #title {
-    font-size: 1.5rem;
+  .li-generator-container__form > input {
+    margin-left: 0;
   }
 }
