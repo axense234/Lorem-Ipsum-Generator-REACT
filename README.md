@@ -31,6 +31,8 @@ npm start
 
 ## **Version History**
 
+- 0.3
+  - Analyzed code to gather to-do tasks and made it so now the generator can generate more than the default paragraphs.
 - 0.2
   - Improved React logic and also made the website look better
   - See [commit change]https://github.com/axense234/Lorem-Ipsum-Generator-REACT/commits/master) or See [release history](https://github.com/axense234/Lorem-Ipsum-Generator-REACT/releases)

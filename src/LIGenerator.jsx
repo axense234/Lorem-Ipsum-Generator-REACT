@@ -7,9 +7,22 @@ const LIGenerator = () => {
   const [segmentsShown, setSegmentsShown] = useState([]);
   const [numberOfParagraphs, setNumberOfParagraphs] = useState(0);
 
+  const calculateSegmentsOverflow = () =>{
+      let i = Math.floor(numberOfParagraphs / segments.length);
+      let r = numberOfParagraphs % segments.length
+      let changedSegmentsShown = segments;
+      for(let a = 1; a < i;a++){
+        changedSegmentsShown = changedSegmentsShown.concat(segments)
+      }
+      if(r){
+        changedSegmentsShown = changedSegmentsShown.concat(segments.slice(0,r));
+      }
+      return changedSegmentsShown
+  }
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    setSegmentsShown(segments.slice(0, numberOfParagraphs));
+    setSegmentsShown(numberOfParagraphs <= segments.length ? segments.slice(0, numberOfParagraphs) : calculateSegmentsOverflow());
   };
 
   return (
@@ -29,10 +42,10 @@ const LIGenerator = () => {
         />
         <button type='submit'>GENERATE</button>
       </form>
-      {segmentsShown.map((segment) => {
-        const { id, paragraph } = segment;
+      {segmentsShown.map((segment, index) => {
+        const { paragraph } = segment;
         return (
-          <div className='li-generator-container__p' key={id}>
+          <div className='li-generator-container__p' key={index}>
             {paragraph}
           </div>
         );
