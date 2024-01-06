@@ -11,6 +11,8 @@ A simple React Project that focuses on the basics of react by displaying paragra
 ### Dependencies
 
 - Check package.json for details.
+- Git
+- Docker(if you want to execute using Docker)
 
 ### Installing
 
@@ -20,9 +22,20 @@ git clone https://github.com/axense234/Lorem-Ipsum-Generator-REACT.git
 
 ### Executing program
 
+- **Using NPM**
+
 ```
 npm install
 npm start
+```
+
+- **Using Docker**
+
+```
+docker build -t lig-react:0.3.0 .
+docker stop lig-react-app
+docker rm lig-react-app
+docker run -d -p 3000:3000 --name lig-react-app lig-react:0.3.0
 ```
 
 ## **Authors**
